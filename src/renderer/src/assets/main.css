@@ -1,0 +1,211 @@
+@import './reset.css';
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/InterNormal.ttf') format('truetype');
+}
+
+:root {
+  --inter-font: "Inter", sans-serif;
+  --roboto-font: "Roboto", sans-serif;
+
+
+  /* Colors */
+  --white-color: #FFFFFF;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  padding: 0 1px 1px 0;
+  overflow: hidden;
+  height: 100%;
+} * {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  border: 1.4px solid #eaeaea;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.titlebar__login {
+  display: flex;
+  padding: 0 1rem;
+  height: 30px;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  font-family: var(--inter-font);
+
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.titlebar__login__controls {
+  margin-right: 0.8rem;
+  min-width: 5.5rem;
+  max-width: 5.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.titlebar__login__controls button {
+  width: 1rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  border: 1px solid #b9b8ba;
+  cursor: pointer;
+}
+.titlebar__login__controls > .close {
+  border-color: #df4744;
+  background-color: #fc5753;
+  transition-duration: 200ms;
+}
+.titlebar__login__controls > .maximize {
+  background-color: #33c748;
+  border-color: #27aa35;
+  transition-duration: 200ms;
+}
+.titlebar__login__controls > .minimize {
+  background-color: #fdbc40;
+  border-color: #de9f34;
+  transition-duration: 200ms;
+}
+.titlebar__login > .titlebar__login__title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #000000;
+  margin-left: 0.5rem;
+  margin-right: auto;
+  text-align: center;
+  text-overflow: ellipsis;
+  app-region: drag;
+}
+.titlebar__login__title {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.titlebar__login__options button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+}
+
+.login__page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #cccccc;
+}
+.login__page__body {
+  font-family: var(--inter-font);
+  font-size: 2rem;
+  background-color: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.home {
+  display: flex;
+  height: 100vh;
+  font-family: var(--inter-font);
+}
+
+.sidebar {
+  user-select: none;
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(247, 247, 247);
+  width: 26rem;
+  height: 100%;
+  border-right: 1px solid #eaeaea;
+}
+.sidebar__content {
+  margin: 2rem 0;
+}
+.sidebar__contentItem {
+  display: flex;
+  align-items: center;
+  font-family: var(--inter-font);
+  font-size: 2rem;
+  width: 100%;
+  border: none;
+  height: 28px;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.37rem;
+  font-weight: 500;
+  color: #727272;
+}
+.sidebar__contentItem img {
+  width: 18px;
+  margin-right: 10px;
+}
+.sidebar__content button:hover {
+  border-radius: 0.5rem;
+  background-color: rgb(236, 236, 236);
+}
+
+.home__content{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-height: 100%;
+  background-color: var(--white-color);
+}
+.home__content--titleBar {
+  app-region: drag;
+  height: 3rem;
+  background-color: var(--white-color);
+}
+
+.password__manager {
+  padding: 2rem 3rem;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.password__manager--items {
+  overflow-y: auto;
+  scrollbar-width: none;
+  flex: 1;
+}
+
+.password__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  font-size: 1.4rem;
+}
+.password__item--sectionA{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+}
+.password__item--sectionA p {
+  margin: 1rem 0 0 0;
+}
+.password__item--title {
+}
+.password__item--password {
+  color: grey;
+}
