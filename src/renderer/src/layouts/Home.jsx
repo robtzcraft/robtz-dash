@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router'
 import { supabase } from '../App'
 import { Sidebar } from './Sidebar'
 import { Dash } from './Dash'
-import PasswordManager from './Passwordmanager'
+import { PasswordManager } from './Passwordmanager'
+import { Notes } from './Notes'
 
 export function Home() {
   const navigate = useNavigate()
   const [content, setContent] = useState('Dash')
-  const [, setSessionData] = useState(null)
+  const [sessionData, setSessionData] = useState(null)
 
   const handleContent = (value) => {
     setContent(value)
@@ -17,7 +18,8 @@ export function Home() {
   useEffect(() => {
     const checkSession = async () => {
       const { data } = await supabase.auth.getSession()
-      setSessionData(data.session.user.email)
+      const { dataUser } = await supabase.auth.getUser()
+      setSessionData(dataUser)
       if (!data) {
         navigate('./login')
       }
@@ -37,12 +39,14 @@ export function Home() {
   return (
     <>
       {console.log('component rendered: HomePage')}
+      {console.log(sessionData)}
       <div className="home">
         <Sidebar handleContent={handleContent} />
         <div className="home__content">
           <div className="home__content--titleBar"></div>
           {content == 'Dash' && <Dash />}
           {content == 'PasswordManager' && <PasswordManager />}
+          {content == 'Notes' && <Notes />}
         </div>
       </div>
     </>

@@ -82,6 +82,7 @@ export function PasswordManager() {
                     Copy password
                   </button>
                   <button
+                    className='delete__button'
                     onClick={() => {
                       deleteDataItem(password.id)
                     }}

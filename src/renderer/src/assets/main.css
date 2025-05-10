@@ -12,6 +12,7 @@
 
   /* Colors */
   --white-color: #FFFFFF;
+  --grey-01-color: #eaeaea;
 }
 
 html {
@@ -26,10 +27,44 @@ html {
 
 body {
   height: 100%;
-  border: 1.4px solid #eaeaea;
+  border: 1.4px solid var(--grey-01-color);
   border-radius: 10px;
   overflow: hidden;
 }
+
+
+
+.window__controls {
+  width: 5.9rem;
+  height: 2.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.window__controls button {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+}
+.window__controls button:hover {
+  cursor: pointer;
+}
+.window__controls--close {
+  border: 1px solid #df4744;
+  background-color: #fc5753;
+}
+.window__controls--minimize {
+  border: 1px solid #de9f34;
+  background-color: #fdbc40;
+}
+.window__controls--maximize {
+  border: 1px solid #27aa35;
+  background-color: #33c748;
+}
+
+
+
+
 
 .titlebar__login {
   display: flex;
@@ -107,7 +142,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #cccccc;
 }
 .login__page__body {
   font-family: var(--inter-font);
@@ -151,11 +185,12 @@ body {
   cursor: pointer;
   font-size: 1.37rem;
   font-weight: 500;
-  color: #727272;
+  color: #232323;
+  margin: 7px 0;
 }
 .sidebar__contentItem img {
   width: 18px;
-  margin-right: 10px;
+  margin-right: 6px;
 }
 .sidebar__content button:hover {
   border-radius: 0.5rem;
@@ -175,12 +210,31 @@ body {
   background-color: var(--white-color);
 }
 
+
+
+
+
+
+
+
+
+
+
+
 .password__manager {
   padding: 2rem 3rem;
   flex: 1;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+.password__manager--searchbar input{
+  background-color: grey;
+  border: 1px solid grey;
+  width: 30rem;
+  height: 3rem;
+  border-radius: 6px;
+  margin-bottom: 8px;
 }
 .password__manager--items {
   overflow-y: auto;
@@ -198,7 +252,7 @@ body {
 .password__item--sectionA{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   text-align: start;
 }
 .password__item--sectionA p {
@@ -208,4 +262,30 @@ body {
 }
 .password__item--password {
   color: grey;
+}
+
+
+
+
+.password__item > .delete__button {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
